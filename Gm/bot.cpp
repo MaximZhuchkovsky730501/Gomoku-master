@@ -803,9 +803,13 @@ QString bot::letter()
 
 void bot::changeborders(int x, int y)
 {
-    if (x>=maxborderx-1) maxborderx=x+1;
-    if (x<=minborderx+1) minborderx=x-1;
-    if (y>=maxbordery-1) maxbordery=y+1;
-    if (y<=minbordery+1) minbordery=y-1;
+    if (x==18) maxborderx=18;
+    if (x==0) minborderx=0;
+    if (y==18) maxbordery=18;
+    if (y==0) minbordery=0;
+    if (x>=maxborderx-1 && maxborderx<18 && x<18) maxborderx=x+1;
+    if (x<=minborderx+1 && minborderx>0 && x>0) minborderx=x-1;
+    if (y>=maxbordery-1 && maxbordery<18 && y<18) maxbordery=y+1;
+    if (y<=minbordery+1 && minbordery>0 && y>0) minbordery=y-1;
 }
 
